@@ -19,9 +19,10 @@ set autoindent
 set expandtab
 set shiftwidth=4
 
-" スクリーンベルの無効化（以下２つ）
+" スクリーンベルの無効化（以下３つ）
 set t_vb=
-set novisualbell
+set visualbell
+set noerrorbells
 
 "
 " 検索・置換
