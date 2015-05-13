@@ -8,6 +8,7 @@ setopt auto_pushd           # cd時にディレクトリスタックにpushd
 setopt correct              # コメンドのスペルを訂正
 setopt magic_equal_subst    # =以降も補間 --prefix=/usrなど
 setopt prompt_subst         # プロンプト定義内で変数置換やコマンド置換を扱う
+function chpwd() { ls }
 
 #
 # 補完
