@@ -22,6 +22,10 @@ if [ ! -d ~/.vim/bundle ]; then
     git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 fi
 
+# termをインストール
+cd $HOME/.vim/bundle/tern_for_vim
+npm install
+
 # ログインシェルを変更する
 if [ -z "`chsh -l | grep zsh`"  ]; then
     sudo yum -y install zsh

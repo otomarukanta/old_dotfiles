@@ -288,6 +288,9 @@ let g:lightline = {
             \ 'colorscheme' : 'wombat',
             \ }
 
+" javascript 補完
+NeoBundle 'marijnh/tern_for_vim'
+
 
 NeoBundle 'tomasr/molokai'
 
