@@ -130,7 +130,12 @@ let g:acp_enableAtStartup = 0 "AutoComplPopを無効化
 let g:neocomplete#enable_at_startup = 1 "補間を有効
 let g:neocomplete#enable_smart_case = 1 "スマートケースに対応
 let g:neocomplete#skip_auto_completion_time = "" "補間に時間がかかってもがんばる
+ 
+" javascript 補完
+NeoBundle 'myhere/vim-nodejs-complete'
+let g:node_usejscomplete = 1
 
+ 
 "
 " clang_competeと併用するときの設定
 "
@@ -154,9 +159,10 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=nodejscomplete#CompleteJS
+autocmd FileType javascript setlocal completeopt-=preview
 " autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
 " プレビュー画面を使わない
 autocmd FileType python setlocal completeopt-=preview
 
@@ -287,11 +293,7 @@ let g:lightline = {
             \ 'colorscheme' : 'wombat',
             \ }
 
-" javascript 補完
-NeoBundle 'marijnh/tern_for_vim'
-
 NeoBundle 'tomasr/molokai'
-
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
