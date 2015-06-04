@@ -52,6 +52,8 @@ set nowritebackup
 set nobackup
 set noswapfile
 
+" 保存する時、行末のスペースを削除する
+autocmd BufWritePre * :%s/\s\+$//ge
 "
 " マクロ・キー設定
 "
