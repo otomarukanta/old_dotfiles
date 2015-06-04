@@ -31,3 +31,6 @@ if [ -z "`chsh -l | grep zsh`"  ]; then
     sudo yum -y install zsh
 fi
 chsh -s /bin/zsh
+
+# vim templateをコピー
+cp -r "$BASE_DIR/vim/template/" ~/.vim/template/
