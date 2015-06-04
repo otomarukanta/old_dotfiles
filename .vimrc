@@ -132,12 +132,12 @@ let g:acp_enableAtStartup = 0 "AutoComplPopを無効化
 let g:neocomplete#enable_at_startup = 1 "補間を有効
 let g:neocomplete#enable_smart_case = 1 "スマートケースに対応
 let g:neocomplete#skip_auto_completion_time = "" "補間に時間がかかってもがんばる
- 
+
 " javascript 補完
 NeoBundle 'myhere/vim-nodejs-complete'
 let g:node_usejscomplete = 1
 
- 
+
 "
 " clang_competeと併用するときの設定
 "
@@ -155,8 +155,8 @@ let g:neocomplete#force_omni_input_patterns.objcpp =
             \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 " タブで補完対象を選択
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>" 
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>" 
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -236,6 +236,7 @@ if executable("clang++")
 endif
 let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 
+let g:syntastic_html_tidy_exec = 'tidy5'
 
 "
 " QuickRun
@@ -271,8 +272,8 @@ vmap \c <Plug>(caw:I:toggle)
 NeoBundle "t9md/vim-quickhl"
 nmap <Space>m <Plug>(quickhl-manual-this)
 nmap <Space>m <Plug>(quickhl-manual-this)
-xmap <Space>M <Plug>(quickhl-manual-reset) 
-xmap <Space>M <Plug>(quickhl-manual-reset) 
+xmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
 
 NeoBundle "Shougo/unite.vim"
 NeoBundle "Shougo/unite-outline"
