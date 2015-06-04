@@ -14,10 +14,10 @@ set wrap            " テキスト折り返し
 set textwidth=0     " 自動で改行を入らないように
 
 " タブ幅の設定
-set tabstop   =4
+set tabstop   =2
 set autoindent
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 
 " スクリーンベルの無効化（以下３つ）
 set t_vb=
