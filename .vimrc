@@ -335,4 +335,4 @@ set cinoptions+=:g0,0
 autocmd FileType * setlocal formatoptions-=ro
 setlocal path+=/Users/kanta/cocos2d-x/cocos2d-x-3.3beta0/cocos/
 
-autocmd BufNewFile *.html 0r ~/.vim/templates/template.html
+autocmd BufNewFile *.html 0r ~/.vim/template/template.html
