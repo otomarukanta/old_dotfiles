@@ -2,6 +2,7 @@
 
 # リンクするファイル名一覧
 SYMLINK_LIST="
+.gitconfig
 .vimrc
 .zshrc
 "
