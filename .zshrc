@@ -17,7 +17,7 @@ autoload -U compinit; compinit  # 補完機能を有効
 setopt auto_list                # 補完候補を一覧で表示
 setopt auto_menu                # 補完キー
 setopt auto_pushd               # 移動したディレクトリを保存
-setopt list_packed              # 補完対象の表示をつめる 
+setopt list_packed              # 補完対象の表示をつめる
 setopt nolistbeep               # 補完時のビープ音を鳴らさない
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字小文字を区別しない
@@ -63,3 +63,5 @@ case "${OSTYPE}" in
         alias ls="ls -F --color"
         ;;
 esac
+# tmuxでvimの色設定を反映
+alias tmux="TERM=screen-256color-bce tmux"
