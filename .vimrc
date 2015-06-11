@@ -7,17 +7,23 @@ scriptencoding utf-8    " VimScriptファイルの文字コードを指定
 "
 " 表示
 "
-set list            " 不可視文字の表示
-set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲  " 不可視文字の設定
+
+" 不可視文字の表示
+set list
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%,eol:↲
 set number          " 行番号表示
 set wrap            " テキスト折り返し
 set textwidth=0     " 自動で改行を入らないように
+set cursorline      " カーソル行の強調
+set showcmd         " 入力中のコマンドを表示
+set colorcolumn=80  " 80文字目に線を表示
 
 " タブ幅の設定
-set tabstop   =2
-set autoindent
-set expandtab
-set shiftwidth=2
+set tabstop   =2    " タブの幅
+set autoindent      " 改行時に前の行のインデントに合わせる
+set expandtab       " タブを空白に展開
+set shiftwidth=2    " 自動インデントの幅
+set shiftround      " < > でインデントするときはshiftwidth倍数
 
 " スクリーンベルの無効化（以下３つ）
 set t_vb=
@@ -36,7 +42,6 @@ set wrapscan    " 検索が最後まで行ったら最初まで戻る
 "
 " 編集
 "
-set shiftround          " < > でインデントするときはshiftwidth倍数
 set infercase           " 補完時に大文字小文字区別なし
 set virtualedit=all     " カーソルを文字が存在しない部分でも動けるように
 set hidden              " バッファを閉じる代わりに隠す
@@ -57,8 +62,7 @@ autocmd BufWritePre * :%s/\s\+$//ge
 "
 " マクロ・キー設定
 "
-
-inoremap jj <Esc>   " 入力モード中に素早くjjと入力した場合はESCとみなす
+inoremap jj <Esc>       "入力モード中に素早くjjと入力した場合はESCとみなす
 nmap <silent> <Esc><Esc> :nohlsearch<CR> " ESCを二回押すとハイライト消去
 
 " カーソル下の単語を * で検索
@@ -132,11 +136,6 @@ let g:acp_enableAtStartup = 0 "AutoComplPopを無効化
 let g:neocomplete#enable_at_startup = 1 "補間を有効
 let g:neocomplete#enable_smart_case = 1 "スマートケースに対応
 let g:neocomplete#skip_auto_completion_time = "" "補間に時間がかかってもがんばる
-
-" javascript 補完
-NeoBundle 'myhere/vim-nodejs-complete'
-let g:node_usejscomplete = 1
-
 
 "
 " clang_competeと併用するときの設定
@@ -261,25 +260,11 @@ let g:quickrun_config.tex = {
             \}
 
 
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-
 " \cでコメントアウト
 NeoBundle "tyru/caw.vim"
 nmap \c <Plug>(caw:I:toggle)
 vmap \c <Plug>(caw:I:toggle)
 
-" 単語をハイライトする
-NeoBundle "t9md/vim-quickhl"
-nmap <Space>m <Plug>(quickhl-manual-this)
-nmap <Space>m <Plug>(quickhl-manual-this)
-xmap <Space>M <Plug>(quickhl-manual-reset)
-xmap <Space>M <Plug>(quickhl-manual-reset)
-
-NeoBundle "Shougo/unite.vim"
-NeoBundle "Shougo/unite-outline"
-NeoBundle "Shougo/unite-build"
-
-"
 " cpp-vim
 "
 " C++11のシンタックスハイライト用
@@ -319,10 +304,6 @@ highlight Normal ctermbg=none
 "
 "
 function! s:cpp()
-    " タブ幅の設定
-    setlocal tabstop   =2
-    setlocal shiftwidth=2
-    setlocal path+=/Users/kanta/cocos2d-x/cocos2d-x-3.3beta0/cocos/
     setlocal path+=./include/
 endfunction
 
