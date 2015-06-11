@@ -282,11 +282,6 @@ let g:lightline = {
             \ }
 
 NeoBundle 'tomasr/molokai'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-
-au BufRead,BufNewFile *.md set filetype=markdown
 
 call neobundle#end()
 
@@ -314,6 +309,5 @@ augroup END
 
 set cinoptions+=:g0,0
 autocmd FileType * setlocal formatoptions-=ro
-setlocal path+=/Users/kanta/cocos2d-x/cocos2d-x-3.3beta0/cocos/
 
 autocmd BufNewFile *.html 0r ~/.vim/template/template.html
