@@ -1,10 +1,11 @@
-#!/bin_bash
+#!/bin/sh
 
 # リンクするファイル名一覧
 SYMLINK_LIST="
 .gitconfig
 .vimrc
 .zshrc
+.tmux.conf
 "
 
 # 設定ファイルがある場所のフルパス
