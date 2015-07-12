@@ -133,6 +133,12 @@ NeoBundleLazy "davidhalter/jedi-vim", {
       \   "mac": "pip install jedi",
       \   "unix": "pip install jedi",
       \ }}
+NeoBundleLazy "lambdalisue/vim-pyenv", {
+      \ "depends": ['davidhalter/jedi-vim'],
+      \ "autoload": {
+      \   "filetypes": ["python", "python3", "djangohtml"]
+      \ }}
+
 
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
