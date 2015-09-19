@@ -153,6 +153,9 @@ NeoBundleLazy 'othree/html5.vim', {
 NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
 
+NeoBundle 'jiangmiao/auto-pairs'
+
+
 call neobundle#end()
 
 NeoBundleCheck
