@@ -62,8 +62,11 @@ autocmd BufWritePre * :%s/\s\+$//ge
 "
 " マクロ・キー設定
 "
-inoremap jj <Esc>       "入力モード中に素早くjjと入力した場合はESCとみなす
-nmap <silent> <Esc><Esc> :nohlsearch<CR> " ESCを二回押すとハイライト消去
+nnoremap <silent> ; :
+" 入力モード中に素早くjjと入力した場合はESCとみなす
+inoremap <silent> jj <Esc>
+" ESCを二回押すとハイライト消去
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
 
 " カーソル下の単語を * で検索
 vnoremap <silent> * "vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>
