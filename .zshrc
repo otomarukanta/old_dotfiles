@@ -1,7 +1,7 @@
 
 # 一般設定
 #
-bindkey -v                  # キーバインドのviモードに設定
+bindkey -e                  # キーバインドのemacsモードに設定
 setopt no_beep              # ビープ音を鳴らさない
 setopt auto_cd              # ディレクトリ名などで移動
 setopt auto_pushd           # cd時にディレクトリスタックにpushd
