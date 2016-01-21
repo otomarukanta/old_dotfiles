@@ -158,6 +158,8 @@ NeoBundle 'itchyny/lightline.vim'
 
 NeoBundle 'jiangmiao/auto-pairs'
 
+NeoBundle 'airblade/vim-gitgutter'
+
 
 call neobundle#end()
 
