@@ -160,6 +160,8 @@ NeoBundle 'jiangmiao/auto-pairs'
 
 NeoBundle 'airblade/vim-gitgutter'
 
+NeoBundle 'nathanaelkane/vim-indent-guides'
+
 
 call neobundle#end()
 
@@ -293,8 +295,13 @@ let g:lightline = {
 filetype plugin indent on
 syntax on
 
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
 colorscheme molokai
 highlight Normal ctermbg=none
+highlight IndentGuidesOdd ctermbg=233
+highlight IndentGuidesEven ctermbg=234
+
 
 "
 "
