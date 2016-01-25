@@ -156,8 +156,6 @@ NeoBundleLazy 'othree/html5.vim', {
 NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
 
-NeoBundle 'jiangmiao/auto-pairs'
-
 NeoBundle 'airblade/vim-gitgutter'
 
 NeoBundle 'nathanaelkane/vim-indent-guides'
