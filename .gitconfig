@@ -1,6 +1,5 @@
-[user]
-  name = otomarukanta
-  email = kanta208@gmail.com
+[include]
+  path = ~/.gitconfig_local
 [alias]
   st = status
   co = checkout
