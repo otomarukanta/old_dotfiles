@@ -8,3 +8,7 @@
   ci = commit
 [core]
   editor = vim
+[pager]
+  log = ~/bin/diff-highlight | less -R
+  diff = ~/bin/diff-highlight | less -R
+  show = ~/bin/diff-highlight | less -R
