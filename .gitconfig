@@ -9,6 +9,8 @@
 [core]
   editor = vim
   excludesfiles = ~/.gitignore
+[color]
+  ui = true
 [pager]
   log = ~/bin/diff-highlight | less -R
   diff = ~/bin/diff-highlight | less -R
