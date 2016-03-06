@@ -6,8 +6,10 @@
   co = checkout
   br = branch
   ci = commit
+  l = log --all --graph --pretty='format:%C(yellow)%h%C(cyan)%d %C(red)$%ar %C(reset)%s'
 [core]
   editor = vim
+  excludesfiles = ~/.gitignore
 [pager]
   log = ~/bin/diff-highlight | less -R
   diff = ~/bin/diff-highlight | less -R
