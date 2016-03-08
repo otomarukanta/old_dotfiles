@@ -26,6 +26,9 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # 補完時に大文字小�
 #
 # setopt pushd_ignore_dups
 # setopt extended_glob
+export HISTFILE=${HOME}/.zsh_history
+export HISTSIZE=1000
+export SAVEHIST=100000
 setopt share_history        # 複数起動しているzshの間で履歴を共有
 setopt hist_ignore_all_dups # 同じコマンドは履歴に追加しない
 setopt hist_ignore_space    # スペースから始まるコマンドは履歴に追加しない
@@ -71,3 +74,12 @@ export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 eval "$(pyenv init -)"
+
+function peco-history-selection() {
+  BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+  CURSOR=$#BUFFER
+  zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
