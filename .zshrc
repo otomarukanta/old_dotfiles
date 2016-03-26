@@ -40,20 +40,25 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'  # 単語の一部としし認識される文
 #
 autoload colors; colors # プロンプトに色をつける
 autoload -Uz vcs_info
-RPROMPT="%{${fg[yellow]}%}[%~]%{${reset_color}%}"
 setopt prompt_subst
+
+# git
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
-RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
-PROMPT="%{${fg[yellow]}%}%n@%m%{${reset_color}%} $ "
-PROMPT2=''
+
+local prompt_date="%{${bg[cyan]}${fg[black]}%}[%*]%{${reset_color}%}"
+local prompt_host=" %{${fg[magenta]}%}%n@%M"
+local prompt_dir="%{${reset_color}${fg[yellow]}%} [%d]%{${reset_color}%}"
+PROMPT="${prompt_date}${prompt_host}${prompt_dir}
+ %(?.%{${fg[green]}%}.%{${fg[red]}%})"'(´-\`).｡oO '"%{${reset_color}%}"
+PROMPT2=" > "
+RPROMPT='${vcs_info_msg_0_}'
+
 export LSCOLORS=gxfxcxdxbxegedabagacad
-# export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-# export LS_COLORS='di=01;36:ln=01;35:ex=01;32'
 export LS_COLORS='di=36:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 zstyle ':completion:*:default' list-colors ${LS_COLORS}
 
@@ -75,6 +80,7 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 eval "$(pyenv init -)"
 
+# peco
 function peco-history-selection() {
   BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
   CURSOR=$#BUFFER
@@ -84,7 +90,7 @@ function peco-history-selection() {
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
-
+# ssh setteing for tmux
 AGENT_SOCK_FILE="/tmp/ssh-agent-$USER"
 SSH_AGENT_FILE="$HOME/.ssh-agent-info"
 if test $SSH_AUTH_SOCK ; then
@@ -100,3 +106,7 @@ else
     ssh-add
   fi
 fi
+
+# alias
+alias la="ls -a"
+alias ll="ls -l"
