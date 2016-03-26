@@ -12,6 +12,7 @@ setopt prompt_subst         # プロンプト定義内で変数置換やコマ�
 #
 # 補完
 #
+fpath=($HOME/.zsh/completions/src $fpath)
 autoload -U compinit; compinit  # 補完機能を有効
 setopt auto_list                # 補完候補を一覧で表示
 setopt auto_menu                # 補完キー
