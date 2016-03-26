@@ -91,16 +91,6 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 eval "$(pyenv init -)"
 
-# peco
-function peco-history-selection() {
-  BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-  CURSOR=$#BUFFER
-  zle reset-prompt
-}
-
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
-
 # ssh setteing for tmux
 AGENT_SOCK_FILE="/tmp/ssh-agent-$USER"
 SSH_AGENT_FILE="$HOME/.ssh-agent-info"
@@ -123,6 +113,7 @@ alias la="ls -a"
 alias ll="ls -l"
 
 source $HOME/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh/peco.zsh
 
 # local依存の設定を読み込む
 [ -f $HOME/.zshrc_local ] && . $HOME/.zshrc_local
