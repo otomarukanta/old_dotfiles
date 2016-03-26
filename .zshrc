@@ -110,3 +110,6 @@ fi
 # alias
 alias la="ls -a"
 alias ll="ls -l"
+
+# local依存の設定を読み込む
+[ -f $HOME/.zshrc_local ] && . $HOME/.zshrc_local
