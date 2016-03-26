@@ -122,5 +122,7 @@ fi
 alias la="ls -a"
 alias ll="ls -l"
 
+source $HOME/.zsh/syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # local依存の設定を読み込む
 [ -f $HOME/.zshrc_local ] && . $HOME/.zshrc_local
