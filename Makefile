@@ -8,3 +8,6 @@ all:
 symlink:
 	@printf "Start to symlink dotfiles to home directory.\n"
 	@$(foreach val, $(DOTFILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
+
+init-git-user:
+	bash ./scripts/setup_git.sh

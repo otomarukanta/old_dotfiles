@@ -67,4 +67,5 @@ fi
 
 # symlink dotfiles
 cd "$DOTFILES_PATH"
+make init-git-user
 make symlink
