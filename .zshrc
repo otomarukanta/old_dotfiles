@@ -89,6 +89,8 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
+export XDG_CONFIG_HOME=$HOME/.config
+
 eval "$(pyenv init -)"
 
 # ssh setteing for tmux
