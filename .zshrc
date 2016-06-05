@@ -83,6 +83,7 @@ case "${OSTYPE}" in
 esac
 # tmuxでvimの色設定を反映
 alias tmux="TERM=screen-256color-bce tmux"
+export TERM=xterm-256color
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
