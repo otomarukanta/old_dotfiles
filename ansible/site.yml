@@ -1,0 +1,8 @@
+- name: Start installation and configuration
+  hosts: all
+  roles:
+    - neovim
+    - dein
+    - peco
+    - diff-highlight
+    - dotfiles

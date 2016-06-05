@@ -1,0 +1,13 @@
+- name: Create symlinks
+  file:
+    src: ~/dotfiles/{{ item }}
+    dest: ~/{{ item }}
+    state: link
+    force: yes
+    with_items:
+      - .gitconfig
+      - .gitconfig_local
+      - .tmux.conf
+      - .vimrc
+      - .zsh
+      - .zshrc

@@ -1,0 +1,21 @@
+- name: Install packages to build neovim
+  yum: name={{ item }} state=present
+  with_items:
+    - libtool
+    - autoconf
+    - automake
+    - cmake
+    - gcc
+    - gcc-c++
+    - make
+    - pkgconfig
+    - unzip
+
+- name: Checkout a neovim repo
+  git: repo=git@github.com:neovim/neovim.git dest=/tmp/neovim accept_hostkey=yes
+
+- name: Build neovim
+  command: make chdir="/tmp/neovim"
+
+- name: Copy to ~/local/bin/
+  copy: src=/tmp/neovim/build/bin/nvim dest=~/local/bin/ mode=0755
