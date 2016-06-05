@@ -12,7 +12,7 @@
     - unzip
 
 - name: Checkout a neovim repo
-  git: repo=git@github.com:neovim/neovim.git dest=/tmp/neovim accept_hostkey=yes
+  git: repo=https://github.com/neovim/neovim.git dest=/tmp/neovim accept_hostkey=yes
 
 - name: Build neovim
   command: make chdir="/tmp/neovim"
