@@ -1,4 +1,4 @@
 - name: Install dein.vim
   shell: >
-    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | bash
+    curl -sL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | bash
 
