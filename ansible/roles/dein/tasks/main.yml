@@ -1,5 +1,4 @@
 - name: Install dein.vim
-  git: repo=
+  shell: >
+    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | bash
 
-- name: Copy to ~/local/bin/
-  copy: src=/tmp/diff-highlight dest=~/local/bin/ mode=0755
