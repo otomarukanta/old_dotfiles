@@ -2,4 +2,4 @@
   get_url: url=https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight dest=/tmp/diff-highlight
 
 - name: Copy to ~/local/bin/
-  copy: src=/tmp/diff-highlight dest={{/ my_bin_path }} mode=0755
+  copy: src=/tmp/diff-highlight dest={{ my_bin_path }} mode=0755
