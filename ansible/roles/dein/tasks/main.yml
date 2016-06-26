@@ -1,4 +1,5 @@
-- name: Install dein.vim
-  shell: >
-    curl -sL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | bash
+- name: Download install script for dein.vim
+  get_url: url=https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh dest=/tmp/dein_install.sh mode=0777
 
+- name: Install dein.vim
+  command: /tmp/dein_install.sh
