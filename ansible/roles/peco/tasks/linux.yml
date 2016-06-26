@@ -10,4 +10,4 @@
   unarchive: src=/tmp/peco_linux_amd64.tar.gz dest=/tmp/
 
 - name: Copy to ~/local/bin/
-  copy: src=/tmp/peco_linux_amd64/peco dest=~/local/bin/ mode=0755
+  copy: src=/tmp/peco_linux_amd64/peco dest={{ my_bin_path }} mode=0755
