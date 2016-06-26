@@ -1,5 +1,5 @@
 - include: mac.yml
-  when: ansible_os_family = 'Darwin'
+  when: ansible_os_family == 'Darwin'
 
 - include: linux.yml
-  when: ansible_os_family = 'RedHat'
+  when: ansible_os_family == 'RedHat'
