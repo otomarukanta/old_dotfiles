@@ -1,21 +1,5 @@
-- name: Install packages to build neovim
-  yum: name={{ item }} state=present
-  with_items:
-    - libtool
-    - autoconf
-    - automake
-    - cmake
-    - gcc
-    - gcc-c++
-    - make
-    - pkgconfig
-    - unzip
+- name: Download repo for neovim from copr
+  get_url: url=https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo dest=/etc/yum.repos.d/dperson-neovim-epel-7.repo
 
-- name: Checkout a neovim repo
-  git: repo=https://github.com/neovim/neovim.git dest=/tmp/neovim accept_hostkey=yes
-
-- name: Build neovim
-  make: chdir="/tmp/neovim"
-
-- name: Copy to ~/local/bin/
-  copy: src=/tmp/neovim/build/bin/nvim dest={{ my_bin_path }} mode=0755
+- name: Install neovim
+  yum: name=neovim state=present
