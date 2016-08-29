@@ -1,5 +1,7 @@
 - name: Download repo for neovim from copr
+  become: yes
   get_url: url=https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo dest=/etc/yum.repos.d/dperson-neovim-epel-7.repo
 
 - name: Install neovim
+  become: yes
   yum: name=neovim state=present
