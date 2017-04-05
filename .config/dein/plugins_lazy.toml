@@ -9,6 +9,8 @@ on_i = 1
 [[plugins]] # Completion
 repo = 'Shougo/deoplete.nvim'
 hook_add = '''
+let g:python_host_prog = $HOME . "/.pyenv/versions/neovim2/bin/python"
+let g:python3_host_prog = $HOME . "/.pyenv/versions/neovim3/bin/python"
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#omni_patterns = {}
 inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : deoplete#mappings#manual_complete()
@@ -26,9 +28,19 @@ on_i = 1
 [[plugins]] # jedi
 repo = 'zchee/deoplete-jedi'
 hook_add = '''
-let g:python_host_prog = $HOME . "/.pyenv/versions/neovim2/bin/python"
-let g:python3_host_prog = $HOME . "/.pyenv/versions/neovim3/bin/python"
 set completeopt-=preview
 '''
 on_ft = 'python'
+on_i = 1
+
+[[plugins]] # javascript
+repo = 'carlitux/deoplete-ternjs'
+hook_add = '''
+'''
+on_ft = 'javascript'
+on_i = 1
+
+[[plugins]] # go
+repo = 'zchee/deoplete-go'
+on_ft = 'go'
 on_i = 1

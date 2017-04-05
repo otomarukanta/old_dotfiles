@@ -86,6 +86,8 @@ alias tmux="TERM=screen-256color-bce tmux"
 export TERM=xterm-256color
 
 export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$HOME/go/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
