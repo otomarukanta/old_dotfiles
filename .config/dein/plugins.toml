@@ -141,3 +141,11 @@ hook_add = '''
 autocmd BufNewFile,BufRead *.vue set ft=vue
 '''
 on_ft = 'vue'
+
+[[plugins]] # memo
+repo = 'glidenote/memolist.vim'
+hook_add = '''
+nnoremap <Leader>mn  :MemoNew<CR>
+nnoremap <Leader>ml  :MemoList<CR>
+nnoremap <Leader>mg  :MemoGrep<CR>
+'''
