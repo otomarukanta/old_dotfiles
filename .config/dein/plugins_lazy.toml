@@ -6,6 +6,27 @@ let g:echodoc_enable_at_startup = 1
 '''
 on_i = 1
 
+#
+# Snippets
+#
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+hook_source = '''
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+'''
+on_i = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
 [[plugins]] # Completion
 repo = 'Shougo/deoplete.nvim'
 hook_add = '''
