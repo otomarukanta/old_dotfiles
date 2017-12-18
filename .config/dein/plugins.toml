@@ -136,10 +136,6 @@ on_ft = 'go'
 repo = 'tmux-plugins/vim-tmux'
 on_ft = 'tmux'
 
-[[plugins]] # Japanese doc
-repo = 'vim-jp/vimdoc-ja'
-on_ft = 'help'
-
 [[plugins]] # JSX
 repo = 'mxw/vim-jsx'
 hook_add = '''
