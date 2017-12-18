@@ -11,3 +11,6 @@ symlink:
 
 init-git-user:
 	bash ./scripts/setup_git.sh
+
+update:
+	git pull origin master
