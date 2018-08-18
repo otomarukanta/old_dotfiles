@@ -65,3 +65,8 @@ on_i = 1
 repo = 'zchee/deoplete-go'
 on_ft = 'go'
 on_i = 1
+
+[[plugins]] # json
+repo = 'Quramy/vison'
+on_ft = 'json'
+on_i = 1

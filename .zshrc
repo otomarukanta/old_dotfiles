@@ -87,13 +87,17 @@ export TERM=xterm-256color
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$HOME/go/bin:$PATH"
-export PATH="/usr/local/go/bin:$PATH"
+#export PATH="/usr/local/go/bin:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
+export PATH="$HOME/go_appengine:$PATH"
 export XDG_CONFIG_HOME=$HOME/.config
+
+export GOPATH=$HOME/go
+
 
 eval "$(pyenv init -)"
 
@@ -123,3 +127,7 @@ source $HOME/.zsh/peco.zsh
 
 # local依存の設定を読み込む
 [ -f $HOME/.zshrc_local ] && . $HOME/.zshrc_local
+export PATH="$HOME/.embulk/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/kanta/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/kanta/google-cloud-sdk/path.zsh.inc'; fi

@@ -3,18 +3,7 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
-hook_post_update = '''
-if dein#util#_is_windows()
-  let cmd = 'tools\\update-dll-mingw'
-elseif dein#util#_is_cygwin()
-  let cmd = 'make -f make_cygwin.mak'
-elseif executable('gmake')
-  let cmd = 'gmake'
-else
-  let cmd = 'make'
-endif
-let g:dein#plugin.build = cmd
-'''
+build = 'make'
 
 [[plugins]] # quickrun
 repo = 'thinca/vim-quickrun'
@@ -27,9 +16,6 @@ let g:quickrun_config._ = {
   \ 'outputter/buffer/split' : ':rightbelow 8sp',
   \ "outputter/buffer/close_on_empty" : 1,
   \}
-let g:quickrun_config.python = {
-\ "cmdopt" : "-u"
-\}
 '''
 depends = ['vimproc']
 
@@ -55,8 +41,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['flake8', 'mypy']
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_go_checkers = ['golint', 'go']
 '''
 
 [[plugins]] # Syntastic
@@ -117,11 +104,17 @@ on_ft = ['markdown','mkd']
 hook_add = '''
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_math = 1
+let g:vim_markdown_folding_disabled = 1
 '''
 
 [[plugins]] # Golang
 repo = 'fatih/vim-go'
 on_ft = 'go'
+hook_add = '''
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+'''
 
 [[plugins]] # TMUX
 repo = 'tmux-plugins/vim-tmux'
@@ -148,4 +141,10 @@ hook_add = '''
 nnoremap <Leader>mn  :MemoNew<CR>
 nnoremap <Leader>ml  :MemoList<CR>
 nnoremap <Leader>mg  :MemoGrep<CR>
+'''
+
+[[plugins]] # json
+repo = 'elzr/vim-json'
+hook_add = '''
+let g:vim_json_syntax_conceal = 0
 '''
